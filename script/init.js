@@ -13,29 +13,29 @@ var drawGraph = function(year, width, pxPerMedal, medalType){
     	var barHeight = 0;
     	if(medalType === 'Silver'){barHeight=barHeight+d.Gold*pxPerMedal};
     	if(medalType === 'Bronze'){barHeight=barHeight+d.Silver*pxPerMedal+d.Gold*pxPerMedal}
-    	return svgHeight-100-barHeight;
+      return svgHeight-100-barHeight;
     })
-	.attr('width',width)
-	.attr('height',function(d){return 0})
-	.attr('fill',function(){
-		if(medalType==='Bronze'){return 'brown'};
-		return medalType;
-	})
+  .attr('width',width)
+  .attr('height',function(d){return 0})
+  .attr('fill',function(){
+    if(medalType==='Bronze'){return 'brown'};
+    return medalType;
+  })
   .transition().duration(1000).delay(function(){
-  	if(medalType==='Gold'){return 0}
-  	if(medalType==='Silver'){return 1000}
-  	if(medalType==='Bronze'){return 2000}
+    if(medalType==='Gold'){return 0}
+    if(medalType==='Silver'){return 1000}
+    if(medalType==='Bronze'){return 2000}
   }).ease('elastic')
     .attr('y',function(d){
-    	var barHeight = d.Gold*pxPerMedal;
-    	if(medalType === 'Silver'){barHeight=barHeight+d.Silver*pxPerMedal};
-    	if(medalType === 'Bronze'){barHeight=barHeight+d.Silver*pxPerMedal+d.Bronze*pxPerMedal}
+      var barHeight = d.Gold*pxPerMedal;
+      if(medalType === 'Silver'){barHeight=barHeight+d.Silver*pxPerMedal};
+      if(medalType === 'Bronze'){barHeight=barHeight+d.Silver*pxPerMedal+d.Bronze*pxPerMedal}
     	return svgHeight-100-barHeight;
     })
 	.attr('height',function(d){
 		var barHeight = d.Gold*pxPerMedal;
     	if(medalType === 'Silver'){barHeight=d.Silver*pxPerMedal};
-    	if(medalType === 'Bronze'){barHeight=d.Bronze*pxPerMedal}
+    	if(medalType === 'Bronze'){barHeight=d.Bronze*pxPerMedal};
     	return barHeight;
 	})
 }
@@ -44,7 +44,21 @@ var drawGraph = function(year, width, pxPerMedal, medalType){
 // drawGraph(d00.results.collection1,svgWidth/90,svgHeight/120,'Bronze')
 
 var drawYear = function(year){
-  drawGraph(year,svgWidth/90,svgHeight/120,'Gold')
-  drawGraph(year,svgWidth/90,svgHeight/120,'Silver')
-  drawGraph(year,svgWidth/90,svgHeight/120,'Bronze')
+  drawGraph(year,svgWidth/90,svgHeight/130,'Gold')
+  drawGraph(year,svgWidth/90,svgHeight/130,'Silver')
+  drawGraph(year,svgWidth/90,svgHeight/130,'Bronze')
 }
+
+var years= [d00,d04,d08,d12]
+
+var i=0;
+setInterval(function(){
+  d3.selectAll('rect').remove();
+  drawYear(years[i].results.collection1);
+  $('h1').text(years[i].name);
+
+  i++;
+  if(i===years.length){
+    i=0;
+  }
+},3200)
