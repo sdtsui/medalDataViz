@@ -5,3 +5,10 @@ body {
 svg {
 	background-color:white;
 }
+
+h1{
+	position:fixed;
+	margin-top: 5px;
+	margin-left:75px;
+
+}

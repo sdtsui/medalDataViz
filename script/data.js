@@ -1623,8 +1623,8 @@ var d08 = {
         "NOC": "(MGL)",
         "Gold": "2",
         "Silver": "2",
-        "Total": {
         "Bronze": "0",
+        "Total": {
           "href": "",
           "text": "4"
         }
