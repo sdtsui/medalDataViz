@@ -15,7 +15,7 @@ var d00 = {
   "lastsuccess": "Thu Dec 25 2014 02:04:28 GMT+0000 (UTC)",
   "thisversionstatus": "success",
   "results": {
-    "2000": [
+    "collection1": [
       {
         "Rank": "1",
         "NOC": "(USA)",
@@ -1623,8 +1623,8 @@ var d08 = {
         "NOC": "(MGL)",
         "Gold": "2",
         "Silver": "2",
-        "Bronze": "0",
         "Total": {
+        "Bronze": "0",
           "href": "",
           "text": "4"
         }
@@ -2246,7 +2246,7 @@ var d12 = {
   "name": "2012London",
   "count": 85,
   "frequency": "Manual Crawl",
-  "version": 1
+  "version": 1,
   "newdata": true,
   "lastrunstatus": "success",
   "lastsuccess": "Thu Dec 25 2014 02:36:09 GMT+0000 (UTC)",
