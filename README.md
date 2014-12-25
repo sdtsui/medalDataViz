@@ -1,7 +1,10 @@
 Olympic Medal Visualization using D3 and Kimono
 =======
 Completed:
--Start/Stop on click
+
+<li></li>
+<li></li>
+-Start/Stop on click
 -Looping over multiple years
 -Mouseover MVP, displaying Country, rank, and number of type
 
